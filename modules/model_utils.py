@@ -44,7 +44,7 @@ def load_file_from_url(
     Returns the path to the downloaded file.
     """
     os.makedirs(model_dir, exist_ok=True)
-    if not file_name:
+    if file_name is None:
         parts = urlparse(url)
         file_name = os.path.basename(parts.path)
     cached_file = os.path.abspath(os.path.join(model_dir, file_name))
